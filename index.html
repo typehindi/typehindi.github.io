@@ -1,150 +1,101 @@
 <html>
-<head>
+  <head>
+    
+    <?php
+       $title = "TyepHindi";
+       $description = "Type in Hindi";
+       $keywords = "Hindi Typing";
+       include "src/header.php";
+       ?>
+    
+    
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+    <script type="text/javascript">
+      
+      google.load("elements", "1", {
+      packages: "transliteration"
+      });
+      
+      function onLoad() {
+      var options = {
+      sourceLanguage: 'en', 
+      destinationLanguage: ['hi'], 
+      shortcutKey: 'ctrl+g',
+      transliterationEnabled: true
+      };
 
-	<title>Hindi Typing - English to Hindi </title>
+      var control =
+      new google.elements.transliteration.TransliterationControl(options);
+      control.makeTransliteratable(['transliterateDiv']);
+      control.showControl('translControl');
+      }
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+      google.setOnLoadCallback(onLoad);
+      
+    </script>
+    
+  </head>
+  
+  <body class="right-sidebar">
+    
+    <!-- Main -->
+    <div class="wrapper style1">
+      
+    <div class="container">
+      
+      <div class="row">
+	<div  id="content">
+	  <article id="main">
+	    
+	    <section>                                   
+	      
+	      <header>
+		<p>Type Romanized Hindi words in the box below and the words will be converted into unicode Hindi as you press the spacebar.</p>
+	      </header>
+	      
+	      <p>
+		
+		Example: Typing <b>"karya hi safalata ki buniyad hai ।" </b> becomes <b>"कार्य  ही सफलता की बुनियाद  है ।"</b>
+		
+		<ul>
+		  <li><span class="list-color">» </span> Use the backspace or click on any words to get more choices.</li>
+		  <li><span class="list-color">» </span> Click <strong>अ</strong> button below or press <strong>Ctrl+G</strong> to toggle between English and Hindi.</li>
+		</ul>
+		
+		<div id='translControl'class="button alt"></div>
+		
+	      </p>
 
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
-
-	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.dropotron.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/skel-panels.min.js"></script>
-	<script src="js/init.js"></script>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-
-	<noscript>
-		<link rel="stylesheet" href="css/skel-noscript.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/style-desktop.css" />
-		<link rel="stylesheet" href="css/style-noscript.css" />
-	</noscript>
-	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-
-	<script type="text/javascript">
-
-	google.load("elements", "1", {
-		packages: "transliteration"
-	});
-
-	function onLoad() {
-		var options = {
-			sourceLanguage: 'en', 
-			destinationLanguage: ['hi'], 
-			shortcutKey: 'ctrl+g',
-			transliterationEnabled: true
-		};
-
-		var control =
-		new google.elements.transliteration.TransliterationControl(options);
-		control.makeTransliteratable(['transliterateDiv']);
-		control.showControl('translControl');
-	}
-
-	google.setOnLoadCallback(onLoad);
-
-	</script>
-
-</head>
-
-<body class="right-sidebar">
-
-	<!-- Header -->
-	<div id="header">
-
-		<!-- Inner -->
-		<div class="inner">
-			<header>
-				<h1><a href="#" id="logo">Type Hindi </a></h1>
-			</header>
-		</div>
-
-		<!-- Nav -->
-		<nav id="nav">
-			<div class="logo">Type Hindi - Convert English to Unicode Hindi </div>
-		</nav>
-
+	      <textarea  id="transliterateDiv"  row="5"class="nepali-convertarea"></textarea>
+	      
+	      <ul>
+		<li><span class="list-color">» </span> Highlight to select, copy and paste where needed.</li>
+		<li><span class="list-color">» </span> Hard to type letters and full stop can be copied from the list below.</li>
+	      </ul>
+	      
+	      <strong>Hindi Albhabets </strong>
+	      
+	      <ul>
+		<li><strong>12 Vowels</strong>: अ आ इ ई उ ऊ ए ऐ ओ औ अं अँ </li>
+		<li><strong>36 Consonants</strong>: क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह क्ष त्र ज्ञ </li>
+		<li><strong>Full Stop (पूर्ण बिराम)</strong> - ।</li>
+	      </ul>
+	      
+	    </section>
+	    
+	    <hr />
+	  </article>
 	</div>
-
-	<!-- Main -->
-	<div class="wrapper style1">
-
-		<div class="container">
-
-			<div class="row">
-				<div  id="content">
-					<article id="main">
-
-						<section>                                   
-
-							<header>
-								<p>Type Romanized Hindi words in the box below and the words will be converted into unicode Hindi as you press the spacebar.</p>
-							</header>
-
-							<p>
-
-								Example: Typing <b>"karya hi safalata ki buniyad hai ।" </b> becomes <b>"कार्य  ही सफलता की बुनियाद  है ।"</b>
-
-								<ul>
-									<li><span class="list-color">» </span> Use the backspace or click on any words to get more choices.</li>
-									<li><span class="list-color">» </span> Click <strong>अ</strong> button below or press <strong>Ctrl+G</strong> to toggle between English and Hindi.</li>
-								</ul>
-
-								<div id='translControl'class="button alt"></div>
-
-							</p>
-
-							<textarea  id="transliterateDiv"  row="5"class="nepali-convertarea"></textarea>
-
-							<ul>
-								<li><span class="list-color">» </span> Highlight to select, copy and paste where needed.</li>
-								<li><span class="list-color">» </span> Hard to type letters and full stop can be copied from the list below.</li>
-							</ul>
-
-							<strong>Hindi Albhabets </strong>
-
-							<ul>
-								<li><strong>12 Vowels</strong>: अ आ इ ई उ ऊ ए ऐ ओ औ अं अँ </li>
-								<li><strong>36 Consonants</strong>: क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न प फ ब भ म य र ल व श ष स ह क्ष त्र ज्ञ </li>
-								<li><strong>Full Stop (पूर्ण बिराम)</strong> - ।</li>
-							</ul>
-
-						</section>
-
-						<hr />
-					</article>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="12u">
-					<div class="copyright">
-						TypeHindi.Com - All rights reserved.
-					</div>
-				</div>  
-			</div>
-		</div>
-	</div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-61934413-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
+      </div>
+    </div>
+    </div>
+    
+    <?php 
+       include "src/footer.php";
+       ?>
+    
+  </body>
 </html>
